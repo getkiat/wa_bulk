@@ -11,25 +11,10 @@ from sys import platform
 
 options = Options()
 
-print("**********************************************************")
-print("**********************************************************")
-print("*****                                               ******")
-print("*****  THANK YOU FOR USING WHATSAPP BULK MESSENGER  ******")
-print("*****      This tool was built by Anirudh Bagri     ******")
-print("*****           www.github.com/anirudhbagri         ******")
-print("*****                                               ******")
-print("**********************************************************")
-print("**********************************************************")
-
 f = open("message.txt", "r")
 message = f.read()
 f.close()
 
-print("##########################################################")
-print('This is your message..')
-print(message)
-print("##########################################################")
-message = quote(message)
 
 numbers = []
 f = open("numbers.txt", "r")
@@ -38,10 +23,18 @@ for line in f.read().splitlines():
 		numbers.append(line)
 f.close()
 total_number=len(numbers)
+
+
+
+print()
 print("##########################################################")
-print('\nWe found ' + str(total_number) + ' numbers in the file')
+print('\nSending to ' + str(total_number) + ' numbers with below message:')
+print(message)
 print("##########################################################")
 print()
+
+message = quote(message)
+
 delay = 30
 
 if platform == "win32":
